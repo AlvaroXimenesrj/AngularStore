@@ -1,9 +1,7 @@
 const jwt = require("jsonwebtoken");
-
 const APP_SECRET = "myappsecret";
 const USERNAME = "admin";
 const PASSWORD = "secret";
-
 module.exports = function (req, res, next) {
     if ((req.url == "/api/login" || req.url == "/login")
         && req.method == "POST") {
@@ -16,7 +14,6 @@ module.exports = function (req, res, next) {
         }
         res.end();
         return;
-        
     } else if ((((req.url.startsWith("/api/products")
         || req.url.startsWith("/products"))
         || (req.url.startsWith("/api/categories")
